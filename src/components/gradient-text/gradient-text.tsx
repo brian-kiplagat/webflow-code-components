@@ -4,7 +4,7 @@ import './styles.css';
 interface GradientTextProps {
     children: ReactNode;
     className?: string;
-    colors?: string[];
+    colors?: string;
     animationSpeed?: number;
     showBorder?: boolean;
 }
@@ -12,12 +12,12 @@ interface GradientTextProps {
 export default function GradientText({
     children,
     className = '',
-    colors = ['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa'],
+    colors = '#40ffaa,#4079ff,#40ffaa,#4079ff,#40ffaa',
     animationSpeed = 8,
     showBorder = false
 }: GradientTextProps) {
     const gradientStyle = {
-        backgroundImage: `linear-gradient(to right, ${colors.join(', ')})`,
+        backgroundImage: `linear-gradient(to right, ${colors})`,
         animationDuration: `${animationSpeed}s`
     };
 
