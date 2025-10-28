@@ -7,6 +7,9 @@ export default declareComponent(ElectricBorder, {
     description: 'A glowing, animated border wrapper',
     group: 'Plasma',
     props: {
+        children: props.Slot({
+            name: "Content",
+        }),
         color: props.Text({
             name: "Color",
             defaultValue: "#5227FF",
