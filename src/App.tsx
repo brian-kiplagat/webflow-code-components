@@ -1,5 +1,4 @@
 
-import './App.css'
 import ElectricBorder from './components/plasma/electric-border'
 
 function App() {
