@@ -36,7 +36,7 @@ function App() {
           children={<div> <p>A glowing, animated border wrapper.</p> </div>}
         />
         <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          colors="#40ffaa,#4079ff,#40ffaa,#4079ff,#40ffaa"
           animationSpeed={3}
           showBorder={false}
           className="custom-class"
@@ -46,7 +46,7 @@ function App() {
 
         <div style={{ marginTop: '2rem' }}>
           <TextType
-            text={["Text typing effect", "for your websites", "Happy coding!"]}
+            text="experiences,examples,tutorials, Happy coding!"
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}

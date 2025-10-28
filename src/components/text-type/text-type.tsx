@@ -1,6 +1,6 @@
 'use client';
 
-import { ElementType, useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
+import { type ElementType, useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
 import { gsap } from 'gsap';
 import './styles.css';
 
@@ -54,7 +54,13 @@ const TextType = ({
     const cursorRef = useRef<HTMLSpanElement>(null);
     const containerRef = useRef<HTMLElement>(null);
 
-    const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
+    
+    const textArray = useMemo(() => {
+        if (Array.isArray(text)) {
+            return text;
+        }
+        return text.split(',').map(item => item.trim()).filter(Boolean);
+    }, [text]);
 
     const getRandomSpeed = useCallback(() => {
         if (!variableSpeed) return typingSpeed;
@@ -101,7 +107,7 @@ const TextType = ({
     useEffect(() => {
         if (!isVisible) return;
 
-        let timeout: NodeJS.Timeout;
+        let timeout: ReturnType<typeof setTimeout>;
 
         const currentText = textArray[currentTextIndex];
         const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
