@@ -1,5 +1,5 @@
 
-import ElectricBorder from './components/plasma/electric-border'
+import ElectricBorder from './components/border-effect/electric-border'
 
 function App() {
 
