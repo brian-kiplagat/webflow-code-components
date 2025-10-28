@@ -11,6 +11,11 @@ type ElectricBorderProps = PropsWithChildren<{
   style?: CSSProperties;
 }>;
 
+type ElectricBorderCSSVars = {
+  ['--electric-border-color']?: string;
+  ['--eb-border-width']?: string;
+};
+
 const ElectricBorder: React.FC<ElectricBorderProps> = ({
   children,
   color = '#5227FF',
@@ -66,11 +71,13 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
     }
 
     requestAnimationFrame(() => {
-      [...dyAnims, ...dxAnims].forEach((a: any) => {
+      [...dyAnims, ...dxAnims].forEach((a) => {
         if (typeof a.beginElement === 'function') {
           try {
             a.beginElement();
-          } catch {}
+          } catch {
+            console.error('Error beginning element', a);
+          }
         }
       });
     });
@@ -88,9 +95,9 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
     return () => ro.disconnect();
   }, []);
 
-  const vars: CSSProperties = {
-    ['--electric-border-color' as any]: color,
-    ['--eb-border-width' as any]: `${thickness}px`
+  const vars: CSSProperties & ElectricBorderCSSVars = {
+    ['--electric-border-color']: color,
+    ['--eb-border-width']: `${thickness}px`
   };
 
   return (

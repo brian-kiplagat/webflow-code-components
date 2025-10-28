@@ -14,13 +14,8 @@ function App() {
         thickness={2}
         style={{ borderRadius: 16 }}
         className="electric-border-wrapper"
-      >
-        <div>
-          <div style={{ width: '200px', height: '200px', padding: '20px', backgroundColor: 'red' }}>
-
-          </div>
-        </div>
-      </ElectricBorder>
+        children={<div> <p>A glowing, animated border wrapper.</p> </div>}
+      />
 
     </>
   )
