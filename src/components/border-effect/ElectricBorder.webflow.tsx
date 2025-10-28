@@ -2,10 +2,10 @@ import { declareComponent } from '@webflow/react';
 import ElectricBorder from './electric-border';
 import { props } from '@webflow/data-types';
 
-export default declareComponent(ElectricBorder, {
+const ElectricBorderWebflow = declareComponent(ElectricBorder, {
     name: 'ElectricBorder',
     description: 'A glowing, animated border wrapper',
-    group: 'Plasma',
+    group: 'Brians components',
     props: {
         children: props.Slot({
             name: "Content",
@@ -37,3 +37,5 @@ export default declareComponent(ElectricBorder, {
         }),
     },
 });
+
+export default ElectricBorderWebflow;
