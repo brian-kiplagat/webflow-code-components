@@ -6,6 +6,16 @@ import TextType from './components/text-type/text-type'
 import CircularText from './components/circular-text/circular-text'
 import DecryptedText from './components/decrypted-text/decrypted-text'
 import CircularGallery from './components/circular-gallery/circular-gallery'
+import MagicBento from './components/magic-bento/magic-bento'
+import Stack from './components/stack/stack'
+import Masonry from './components/masonry/masonry'
+import TiltedCard from './components/tilted-card/tilted-card'
+import ChromaGrid from './components/chroma-grid/chroma-grid'
+import Folder from './components/folder/folder'
+import Lanyard from './components/lanyard/lanyard'
+import ProfileCard from './components/profile-card/profile-card'
+import SpotlightCard from './components/spotlight-card/spotlight-card'
+import CardSwap, { Card } from './components/card-swap/card-swap'
 
 function App() {
 
@@ -94,6 +104,117 @@ function App() {
         <h1 style={{ marginTop: '2rem' }}>Hover over the elements below</h1>
         <button className="cursor-target">Click me!</button>
         <div className="cursor-target">Hover target</div>
+
+        <div style={{ marginTop: '4rem' }}>
+          <MagicBento
+            textAutoHide={true}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={300}
+            particleCount={12}
+            glowColor="132, 0, 255"
+          />
+        </div>
+
+        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
+          <Stack
+            randomRotation={true}
+            sensitivity={180}
+            sendToBackOnClick={false}
+            cardDimensions={{ width: 200, height: 200 }}
+            cardsData={[
+              { id: 1, img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format" },
+              { id: 2, img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format" },
+              { id: 3, img: "https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format" },
+              { id: 4, img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format" }
+            ]}
+          />
+        </div>
+
+        <div style={{ marginTop: '4rem', height: '800px' }}>
+          <Masonry
+            items={[
+              { id: '1', img: 'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format', url: '#', height: 400 },
+              { id: '2', img: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format', url: '#', height: 300 },
+              { id: '3', img: 'https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format', url: '#', height: 500 },
+              { id: '4', img: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format', url: '#', height: 350 },
+              { id: '5', img: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=500&auto=format', url: '#', height: 450 },
+              { id: '6', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=500&auto=format', url: '#', height: 380 }
+            ]}
+            animateFrom="bottom"
+            scaleOnHover={true}
+            blurToFocus={true}
+          />
+        </div>
+
+        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', height: '400px' }}>
+          <TiltedCard
+            imageSrc="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format"
+            altText="Beautiful nature scene"
+            captionText="Amazing Landscape"
+            scaleOnHover={1.1}
+            rotateAmplitude={14}
+            showTooltip={true}
+          />
+        </div>
+
+        <div style={{ marginTop: '4rem' }}>
+          <ChromaGrid />
+        </div>
+
+        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
+          <Folder
+            color="#5227FF"
+            size={1}
+            items={[
+              <div key="1">Document 1</div>,
+              <div key="2">Document 2</div>,
+              <div key="3">Document 3</div>
+            ]}
+          />
+        </div>
+
+        <div style={{ marginTop: '4rem', height: '500px' }}>
+          <Lanyard />
+        </div>
+
+        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+          <ProfileCard
+            avatarUrl="https://i.pravatar.cc/300?img=68"
+            name="Alex Rivera"
+            title="Full Stack Developer"
+            handle="@alexrivera"
+            enableTilt={true}
+            showUserInfo={true}
+          />
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
+            <div style={{ padding: '2rem' }}>
+              <h2>Interactive Spotlight</h2>
+              <p>Hover over this card to see the spotlight effect</p>
+            </div>
+          </SpotlightCard>
+        </div>
+
+        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
+          <CardSwap width={320} height={450} delay={1.5} pauseOnHover={true}>
+            <Card style={{ backgroundColor: '#FF6B6B', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <h2 style={{ color: 'white' }}>Card 1</h2>
+            </Card>
+            <Card style={{ backgroundColor: '#4ECDC4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <h2 style={{ color: 'white' }}>Card 2</h2>
+            </Card>
+            <Card style={{ backgroundColor: '#95E1D3', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <h2 style={{ color: 'white' }}>Card 3</h2>
+            </Card>
+            <Card style={{ backgroundColor: '#F38181', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <h2 style={{ color: 'white' }}>Card 4</h2>
+            </Card>
+          </CardSwap>
+        </div>
       </div>
 
     </>
