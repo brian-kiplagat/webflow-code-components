@@ -44,6 +44,7 @@ import WavesBg from './background/waves/waves'
 import { FaArrowRight } from 'react-icons/fa'
 import { useState, type JSX } from 'react'
 import './App.css'
+import CardSwap, { Card } from './components/card-swap/card-swap'
 
 function App() {
   const [activeItem, setActiveItem] = useState<null | {
@@ -340,6 +341,39 @@ function App() {
             <p>Hover over this card to see the spotlight effect</p>
           </div>
         </SpotlightCard>
+      )
+    },
+    {
+      name: 'CardSwap',
+      description: 'Interactive card swap component',
+      icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
+      component: (
+        <CardSwap
+          cardDistance={60}
+          verticalDistance={70}
+          delay={5000}
+          pauseOnHover={false}
+        >
+          <Card
+            customClass="custom-class"
+          >
+            <h3>Card 1</h3>
+            <p>Your content here</p>
+          </Card>
+          <Card
+            customClass="custom-class"
+          >
+            <h3>Card 2</h3>
+            <p>Your content here</p>
+          </Card>
+          <Card
+            customClass="custom-class"
+          >
+            <h3>Card 3</h3>
+            <p>Your content here</p>
+          </Card>
+        </CardSwap>
       )
     },
     // Backgrounds

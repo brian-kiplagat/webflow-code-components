@@ -16,7 +16,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
 
 // replace with your own imports, see the usage snippet for details
-import cardGLB from '../../assets/card.glb'
+import cardGLB from '../../assets/card.glb';
 import lanyard from '../../assets/lanyard.png';
 
 import './styles.css';
@@ -236,7 +236,9 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
         </RigidBody>
       </group>
       <mesh ref={band}>
+        {/* @ts-expect-error - meshline types extended at runtime via extend() */}
         <meshLineGeometry />
+        {/* @ts-expect-error - meshline types extended at runtime via extend() */}
         <meshLineMaterial
           color="white"
           depthTest={false}
