@@ -16,6 +16,10 @@ import Lanyard from './components/lanyard/lanyard'
 import ProfileCard from './components/profile-card/profile-card'
 import SpotlightCard from './components/spotlight-card/spotlight-card'
 import CardSwap, { Card } from './components/card-swap/card-swap'
+import BalatroBg from './background/balatro/balatro'
+import AuroraBg from './background/aurora/aurora'
+import BeamsBg from './background/beams/beams'
+import ColorBendsBg from './background/color-bends/color-bends'
 
 function App() {
 
@@ -215,6 +219,23 @@ function App() {
             </Card>
           </CardSwap>
         </div>
+
+        <div style={{ marginTop: '4rem', height: '300px', position: 'relative' }}>
+          <BalatroBg spinRotation={-2} spinSpeed={7} contrast={3.5} lighting={0.4} pixelFilter={745} />
+        </div>
+
+        <div style={{ marginTop: '4rem', height: '300px', position: 'relative' }}>
+          <AuroraBg colorStops={['#5227FF', '#7cff67', '#5227FF']} amplitude={1} blend={0.5} speed={1} />
+        </div>
+
+        <div style={{ marginTop: '4rem', height: '300px', position: 'relative' }}>
+          <BeamsBg beamNumber={12} speed={2} noiseIntensity={1.5} />
+        </div>
+
+        <div style={{ marginTop: '4rem', height: '300px', position: 'relative' }}>
+          <ColorBendsBg rotation={45} speed={0.2} transparent={true} />
+        </div>
+
       </div>
 
     </>
