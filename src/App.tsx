@@ -51,6 +51,7 @@ function App() {
     icon: JSX.Element,
     component: JSX.Element,
   }>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   type tag = 'Background' | 'Visual' | 'Canvas' | 'Text' | 'UI' | 'Component' | 'Interactive';
 
@@ -410,6 +411,26 @@ function App() {
     { name: 'WavesBg', description: 'Waves background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <WavesBg /> },
   ]
 
+  // Filter components based on search query
+  const filteredComponents = components.filter((item) => {
+    if (!searchQuery.trim()) return true;
+
+    const query = searchQuery.toLowerCase().trim();
+    const nameMatch = item.name.toLowerCase().includes(query);
+
+    const getTags = (name: string) => {
+      if (name.endsWith('Bg')) return ['Background', 'Visual', 'Canvas']
+      if (name.toLowerCase().includes('text')) return ['Text', 'UI']
+      if (name.toLowerCase().includes('card')) return ['Card', 'UI']
+      return ['Component', 'UI']
+    }
+
+    const tags = item.tags ?? getTags(item.name);
+    const tagMatch = tags.some(tag => tag.toLowerCase().includes(query));
+
+    return nameMatch || tagMatch;
+  });
+
   return (
     <>
       <div className="components-wrapper">
@@ -498,46 +519,77 @@ function App() {
           } as const
 
           return (
-            <div style={gridStyle}>
-              {components.map((item) => {
-                const tags = item.tags ?? getTags(item.name)
-                return (
-                  <div key={item.name} style={cardStyle}>
-                    <div style={imageStyle}>
-                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        {'https://picsum.photos/200/300'}
-                      </div>
-                    </div>
-                    <div style={contentStyle}>
-                      <div style={headerGroupStyle}>
-                        <div style={{ fontSize: 18, fontWeight: 600, color: '#000000' }}>{item.name}</div>
-                        <div style={{ fontSize: 14, color: '#181818' }}>{item.description}</div>
-                      </div>
-
-                      <div style={dividerStyle} />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-
-                        <div style={tagsRowStyle}>
-                          {tags.map((t) => (
-                            <span key={t} style={tagStyle}>{t}</span>
-                          ))}
+            <>
+              <div style={{
+                width: '100%',
+                marginBottom: 24,
+                display: 'flex',
+                justifyContent: 'center'
+              }}>
+                <input
+                  type="text"
+                  placeholder="Search by component name or tag..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  style={{
+                    width: '100%',
+                    maxWidth: 600,
+                    padding: '12px 16px',
+                    fontSize: 16,
+                    border: '1px solid #c4c4c4',
+                    borderRadius: 8,
+                    outline: 'none',
+                    transition: 'border-color 0.2s',
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#3C3C43';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#c4c4c4';
+                  }}
+                />
+              </div>
+              <div style={gridStyle}>
+                {filteredComponents.map((item) => {
+                  const tags = item.tags ?? getTags(item.name)
+                  return (
+                    <div key={item.name} style={cardStyle}>
+                      <div style={imageStyle}>
+                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          {'https://picsum.photos/200/300'}
                         </div>
                       </div>
-                      <button
-                        style={{
-                          ...ctaStyle,
-                          border: 'none',
-                          cursor: 'pointer'
-                        }}
-                        onClick={() => setActiveItem(item)}
-                      >
-                        Explore
-                      </button>
+                      <div style={contentStyle}>
+                        <div style={headerGroupStyle}>
+                          <div style={{ fontSize: 18, fontWeight: 600, color: '#000000' }}>{item.name}</div>
+                          <div style={{ fontSize: 14, color: '#181818' }}>{item.description}</div>
+                        </div>
+
+                        <div style={dividerStyle} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+
+                          <div style={tagsRowStyle}>
+                            {tags.map((t) => (
+                              <span key={t} style={tagStyle}>{t}</span>
+                            ))}
+                          </div>
+                        </div>
+                        <button
+                          style={{
+                            ...ctaStyle,
+                            border: 'none',
+                            cursor: 'pointer'
+                          }}
+                          onClick={() => setActiveItem(item)}
+                        >
+                          Explore
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
-            </div>
+                  )
+                })}
+              </div>
+            </>
           )
         })()}
         {activeItem && (
