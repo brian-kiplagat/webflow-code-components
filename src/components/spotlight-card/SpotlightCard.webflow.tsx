@@ -14,6 +14,10 @@ const SpotlightCardWebflow = declareComponent(SpotlightCard, {
             name: "Spotlight Color",
             defaultValue: "rgba(255, 255, 255, 0.25)",
         }),
+        className: props.Text({
+            name: "Class Name",
+            defaultValue: "spotlight-card",
+        }),
     },
 });
 

@@ -622,7 +622,7 @@ function App() {
               onClick={(e) => e.stopPropagation()}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', flexDirection: 'column' , alignItems: 'flex-start', margin: 16 }}>
                   <div style={{ fontSize: 18, fontWeight: 600, color: '#ffffff' }}>{activeItem.name}</div>
                   <div style={{ fontSize: 14, color: '#b0b0b0' }}>{activeItem.description}</div>
                 </div>
