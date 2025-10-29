@@ -20,6 +20,11 @@ import BalatroBg from './background/balatro/balatro'
 import AuroraBg from './background/aurora/aurora'
 import BeamsBg from './background/beams/beams'
 import ColorBendsBg from './background/color-bends/color-bends'
+import DitherBg from './background/dither/dither'
+import DotGridBg from './background/dot-grid/dot-grid'
+import FaultyTerminalBg from './background/faulty-terminal/faulty-terminal'
+import GalaxyBg from './background/galaxy/galaxy'
+import GradientBlindsBg from './background/gradient-blinds/gradient-blinds'
 
 function App() {
 
@@ -203,37 +208,42 @@ function App() {
           </SpotlightCard>
         </div>
 
-        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-          <CardSwap width={320} height={450} delay={1.5} pauseOnHover={true}>
-            <Card style={{ backgroundColor: '#FF6B6B', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <h2 style={{ color: 'white' }}>Card 1</h2>
-            </Card>
-            <Card style={{ backgroundColor: '#4ECDC4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <h2 style={{ color: 'white' }}>Card 2</h2>
-            </Card>
-            <Card style={{ backgroundColor: '#95E1D3', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <h2 style={{ color: 'white' }}>Card 3</h2>
-            </Card>
-            <Card style={{ backgroundColor: '#F38181', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <h2 style={{ color: 'white' }}>Card 4</h2>
-            </Card>
-          </CardSwap>
-        </div>
+     
 
-        <div style={{ marginTop: '4rem', height: '600px', position: 'relative' }}>
+        <div style={{ marginTop: '4rem', height: '600px', width: '100%', position: 'relative' }}>
           <BalatroBg spinRotation={-2} spinSpeed={7} contrast={3.5} lighting={0.4} pixelFilter={745} />
         </div>
 
-        <div style={{ marginTop: '4rem', height: '600px', position: 'relative' }}>
+        <div style={{ marginTop: '4rem', height: '600px', width: '100%', position: 'relative' }}>
           <AuroraBg colorStops={['#5227FF', '#7cff67', '#5227FF']} amplitude={1} blend={0.5} speed={1} />
         </div>
 
-        <div style={{ marginTop: '4rem', height: '600px', position: 'relative' }}>
+        <div style={{ marginTop: '4rem', height: '600px', width: '100%', position: 'relative' }}>
           <BeamsBg beamNumber={12} speed={2} noiseIntensity={1.5} />
         </div>
 
-        <div style={{ marginTop: '4rem', height: '600px', position: 'relative' }}>
+        <div style={{ marginTop: '4rem', height: '600px', width: '100%', position: 'relative' }}>
           <ColorBendsBg rotation={45} speed={0.2} transparent={true} />
+        </div>
+
+        <div style={{ marginTop: '4rem', height: '300px', width: '100%', position: 'relative' }}>
+          <DitherBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <DotGridBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <FaultyTerminalBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <GalaxyBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <GradientBlindsBg />
         </div>
 
       </div>

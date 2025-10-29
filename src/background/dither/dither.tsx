@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 import { useRef, useEffect, forwardRef } from 'react';
-import { Canvas, useFrame, useThree, ThreeEvent } from '@react-three/fiber';
-import { EffectComposer, wrapEffect } from '@react-three/postprocessing';
+import { Canvas, useFrame, useThree, type ThreeEvent } from '@react-three/fiber';
+import { EffectComposer, wrapEffect, } from '@react-three/postprocessing';
 import { Effect } from 'postprocessing';
 import * as THREE from 'three';
 
-import './Dither.css';
+import './styles.css';
 
 const waveVertexShader = `
 precision highp float;

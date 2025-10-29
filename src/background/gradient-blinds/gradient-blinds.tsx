@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
-import './GradientBlinds.css';
+import './styles.css';
 
 export interface GradientBlindsProps {
   className?: string;

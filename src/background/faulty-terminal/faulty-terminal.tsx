@@ -1,6 +1,6 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import React, { useEffect, useRef, useMemo, useCallback } from 'react';
-import './FaultyTerminal.css';
+import './styles.css';
 
 type Vec2 = [number, number];
 
