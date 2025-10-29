@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Renderer, Program, Triangle, Mesh } from 'ogl';
-import './RippleGrid.css';
+import './styles.css';
 
 type Props = {
   enableRainbow?: boolean;

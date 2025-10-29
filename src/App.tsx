@@ -25,6 +25,23 @@ import DotGridBg from './background/dot-grid/dot-grid'
 import FaultyTerminalBg from './background/faulty-terminal/faulty-terminal'
 import GalaxyBg from './background/galaxy/galaxy'
 import GradientBlindsBg from './background/gradient-blinds/gradient-blinds'
+import DarkVeilBg from './background/dark-veil/dark-veil'
+import IridescenceBg from './background/iridescence/iridescence'
+import LetterGlitchBg from './background/letter-glitch/letter-glitch'
+import LightRaysBg from './background/light-rays/light-rays'
+import LightningBg from './background/lightning/lightning'
+import LiquidChromeBg from './background/liquid-chrome/liquid-chrome'
+import LiquidEtherBg from './background/liquid-ether/liquid-ether'
+import OrbBg from './background/orb/orb'
+import ParticlesBg from './background/particles/particles'
+import PixelBlastBg from './background/pixel-blast/pixel-blast'
+import PlasmaBg from './background/plasma/plasma'
+import PrismBg from './background/prism/prism'
+import PrismaticBurstBg from './background/prismatic-burst/prismatic-burst'
+import SilkBg from './background/silk/silk'
+import SquaresBg from './background/squares/squares'
+import ThreadsBg from './background/threads/threads'
+import WavesBg from './background/waves/waves'
 
 function App() {
 
@@ -208,7 +225,7 @@ function App() {
           </SpotlightCard>
         </div>
 
-     
+
 
         <div style={{ marginTop: '4rem', height: '600px', width: '100%', position: 'relative' }}>
           <BalatroBg spinRotation={-2} spinSpeed={7} contrast={3.5} lighting={0.4} pixelFilter={745} />
@@ -244,6 +261,81 @@ function App() {
 
         <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
           <GradientBlindsBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <DarkVeilBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <IridescenceBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '150px', width: '100%', position: 'relative' }}>
+          <LetterGlitchBg
+            glitchColors={['#2b4539', '#61dca3', '#61b3dc']}
+            glitchSpeed={50}
+            centerVignette={false}
+            outerVignette={true}
+            smooth={true}
+            characters={'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789'}
+          />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <LightRaysBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <LightningBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <LiquidChromeBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <LiquidEtherBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <OrbBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <ParticlesBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <PixelBlastBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <PlasmaBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <PrismBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <PrismaticBurstBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <SilkBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <SquaresBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <ThreadsBg />
+        </div>
+
+        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+          <WavesBg />
         </div>
 
       </div>

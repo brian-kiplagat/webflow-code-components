@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 
-import './LiquidChrome.css';
+import './styles.css';
 
 interface LiquidChromeProps extends React.HTMLAttributes<HTMLDivElement> {
   baseColor?: [number, number, number];

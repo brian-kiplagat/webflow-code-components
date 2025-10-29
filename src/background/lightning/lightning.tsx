@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import './Lightning.css';
+import './styles.css';
 
 interface LightningProps {
   hue?: number;
