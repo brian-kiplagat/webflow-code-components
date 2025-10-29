@@ -15,7 +15,6 @@ import Folder from './components/folder/folder'
 import Lanyard from './components/lanyard/lanyard'
 import ProfileCard from './components/profile-card/profile-card'
 import SpotlightCard from './components/spotlight-card/spotlight-card'
-import CardSwap, { Card } from './components/card-swap/card-swap'
 import BalatroBg from './background/balatro/balatro'
 import AuroraBg from './background/aurora/aurora'
 import BeamsBg from './background/beams/beams'
@@ -243,37 +242,37 @@ function App() {
           <ColorBendsBg rotation={45} speed={0.2} transparent={true} />
         </div>
 
-        <div style={{ marginTop: '4rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '4rem', height: '600px', width: '100%', position: 'relative' }}>
           <DitherBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <DotGridBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <FaultyTerminalBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <GalaxyBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <GradientBlindsBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <DarkVeilBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <IridescenceBg />
         </div>
 
         <div style={{ marginTop: '2rem', height: '150px', width: '100%', position: 'relative' }}>
           <LetterGlitchBg
-            glitchColors={['#2b4539', '#61dca3', '#61b3dc']}
+            glitchColors={'#2b4539,#61dca3,#61b3dc'}
             glitchSpeed={50}
             centerVignette={false}
             outerVignette={true}
@@ -282,59 +281,59 @@ function App() {
           />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <LightRaysBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <LightningBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <LiquidChromeBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <LiquidEtherBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <OrbBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <ParticlesBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <PixelBlastBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <PlasmaBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <PrismBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <PrismaticBurstBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <SilkBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <SquaresBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <ThreadsBg />
         </div>
 
-        <div style={{ marginTop: '2rem', height: '300px', width: '100%', position: 'relative' }}>
+        <div style={{ marginTop: '2rem', height: '600px', width: '100%', position: 'relative' }}>
           <WavesBg />
         </div>
 

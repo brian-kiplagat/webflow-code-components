@@ -7,9 +7,10 @@ const TiltedCardWebflow = declareComponent(TiltedCard, {
     description: '3D tilted card with mouse interaction and tooltip',
     group: 'Brians components',
     props: {
-        imageSrc: props.Image({
+        imageSrc: props.Text({
             name: "Image",
-            required: true,
+            defaultValue: "https://placehold.co/600x400",
+
         }),
         altText: props.Text({
             name: "Alt Text",

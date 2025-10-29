@@ -6,7 +6,8 @@ import './Balatro.css';
 interface BalatroProps {
   spinRotation?: number;
   spinSpeed?: number;
-  offset?: [number, number];
+  offsetX?: number;
+  offsetY?: number;
   color1?: string;
   color2?: string;
   color3?: string;
@@ -123,7 +124,8 @@ void main() {
 export default function Balatro({
   spinRotation = -2.0,
   spinSpeed = 7.0,
-  offset = [0.0, 0.0],
+  offsetX = 0.0,
+  offsetY = 0.0,
   color1 = '#DE443B',
   color2 = '#006BB4',
   color3 = '#162325',
@@ -166,7 +168,7 @@ export default function Balatro({
         },
         uSpinRotation: { value: spinRotation },
         uSpinSpeed: { value: spinSpeed },
-        uOffset: { value: offset },
+        uOffset: { value: [offsetX, offsetY] },
         uColor1: { value: hexToVec4(color1) },
         uColor2: { value: hexToVec4(color2) },
         uColor3: { value: hexToVec4(color3) },
@@ -210,7 +212,8 @@ export default function Balatro({
   }, [
     spinRotation,
     spinSpeed,
-    offset,
+    offsetX,
+    offsetY,
     color1,
     color2,
     color3,

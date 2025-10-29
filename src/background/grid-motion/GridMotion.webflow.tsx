@@ -7,7 +7,8 @@ const GridMotionWebflow = declareComponent(GridMotion, {
     description: 'Animated grid motion background',
     group: 'Backgrounds',
     props: {
-        speed: props.Number({ name: 'Speed', defaultValue: 1, min: 0, max: 5, decimals: 2 }),
+        items: props.Text({ name: 'Items', defaultValue: 'Item 1,Item 2,Item 3,Item 4,Item 5,Item 6,Item 7,Item 8,Item 9,Item 10' }),
+        gradientColor: props.Text({ name: 'Gradient Color', defaultValue: 'black' }),
     },
 });
 

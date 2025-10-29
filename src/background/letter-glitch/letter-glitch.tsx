@@ -1,14 +1,22 @@
 import { useRef, useEffect } from 'react';
 
-const LetterGlitch = ({
-  glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
+interface LetterGlitchProps {
+  glitchColors: string;
+  glitchSpeed: number;
+  centerVignette: boolean;
+  outerVignette: boolean;
+  smooth: boolean;
+  characters: string;
+}
+const LetterGlitch: React.FC<LetterGlitchProps> = ({
+  glitchColors = '#2b4539,#61dca3,#61b3dc',
   glitchSpeed = 50,
   centerVignette = false,
   outerVignette = true,
   smooth = true,
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789'
 }: {
-  glitchColors: string[];
+  glitchColors: string;
   glitchSpeed: number;
   centerVignette: boolean;
   outerVignette: boolean;
@@ -40,7 +48,8 @@ const LetterGlitch = ({
   };
 
   const getRandomColor = () => {
-    return glitchColors[Math.floor(Math.random() * glitchColors.length)];
+    const arrayOfColors = glitchColors.split(',');
+    return arrayOfColors[Math.floor(Math.random() * arrayOfColors.length)];
   };
 
   const hexToRgb = (hex: string) => {
@@ -52,10 +61,10 @@ const LetterGlitch = ({
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
       ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16)
-        }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      }
       : null;
   };
 

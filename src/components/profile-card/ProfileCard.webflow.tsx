@@ -7,9 +7,9 @@ const ProfileCardWebflow = declareComponent(ProfileCard, {
     description: 'Interactive profile card with gradient effects',
     group: 'Brians components',
     props: {
-        avatarUrl: props.Image({
+        avatarUrl: props.Text({
             name: "Avatar URL",
-            required: true,
+            defaultValue: "https://placehold.co/600x400",
         }),
         name: props.Text({
             name: "Name",
