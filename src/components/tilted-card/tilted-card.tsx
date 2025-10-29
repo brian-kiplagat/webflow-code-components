@@ -3,14 +3,12 @@ import { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 import './styles.css';
 
-interface TiltedCardProps {
-  imageSrc: React.ComponentProps<'img'>['src'];
-  altText?: string;
+interface TiltedCardProps extends React.PropsWithChildren {
   captionText?: string;
   containerHeight?: React.CSSProperties['height'];
   containerWidth?: React.CSSProperties['width'];
-  imageHeight?: React.CSSProperties['height'];
-  imageWidth?: React.CSSProperties['width'];
+  contentHeight?: React.CSSProperties['height'];
+  contentWidth?: React.CSSProperties['width'];
   scaleOnHover?: number;
   rotateAmplitude?: number;
   showMobileWarning?: boolean;
@@ -26,13 +24,12 @@ const springValues: SpringOptions = {
 };
 
 export default function TiltedCard({
-  imageSrc,
-  altText = 'Tilted card image',
+  children,
   captionText = '',
   containerHeight = '300px',
   containerWidth = '100%',
-  imageHeight = '300px',
-  imageWidth = '300px',
+  contentHeight = '300px',
+  contentWidth = '300px',
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,
@@ -109,22 +106,16 @@ export default function TiltedCard({
       <motion.div
         className="tilted-card-inner"
         style={{
-          width: imageWidth,
-          height: imageHeight,
+          width: contentWidth,
+          height: contentHeight,
           rotateX,
           rotateY,
           scale
         }}
       >
-        <motion.img
-          src={imageSrc}
-          alt={altText}
-          className="tilted-card-img"
-          style={{
-            width: imageWidth,
-            height: imageHeight
-          }}
-        />
+        <div className="tilted-card-content">
+          {children}
+        </div>
 
         {displayOverlayContent && overlayContent && (
           <motion.div className="tilted-card-overlay">{overlayContent}</motion.div>

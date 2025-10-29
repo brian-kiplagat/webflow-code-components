@@ -7,14 +7,8 @@ const TiltedCardWebflow = declareComponent(TiltedCard, {
     description: '3D tilted card with mouse interaction and tooltip',
     group: 'Brians components',
     props: {
-        imageSrc: props.Text({
-            name: "Image",
-            defaultValue: "https://placehold.co/600x400",
-
-        }),
-        altText: props.Text({
-            name: "Alt Text",
-            defaultValue: "Tilted card image",
+        children: props.Slot({
+            name: "Content",
         }),
         captionText: props.Text({
             name: "Caption Text",
@@ -49,6 +43,14 @@ const TiltedCardWebflow = declareComponent(TiltedCard, {
         containerWidth: props.Text({
             name: "Container Width",
             defaultValue: "100%",
+        }),
+        contentHeight: props.Text({
+            name: "Content Height",
+            defaultValue: "300px",
+        }),
+        contentWidth: props.Text({
+            name: "Content Width",
+            defaultValue: "300px",
         }),
     },
 });

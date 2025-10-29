@@ -272,13 +272,16 @@ function App() {
       tags: ['UI', 'Interactive', 'Component'],
       component: (
         <TiltedCard
-          imageSrc="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format"
-          altText="Beautiful nature scene"
           captionText="Amazing Landscape"
           scaleOnHover={1.1}
           rotateAmplitude={14}
           showTooltip={true}
-        />
+        >
+          <img
+            src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format"
+            alt="Beautiful nature scene"
+          />
+        </TiltedCard>
       )
     },
     {
@@ -622,7 +625,7 @@ function App() {
               onClick={(e) => e.stopPropagation()}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', flexDirection: 'column' , alignItems: 'flex-start', margin: 16 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: 16 }}>
                   <div style={{ fontSize: 18, fontWeight: 600, color: '#ffffff' }}>{activeItem.name}</div>
                   <div style={{ fontSize: 14, color: '#b0b0b0' }}>{activeItem.description}</div>
                 </div>

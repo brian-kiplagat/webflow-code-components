@@ -33,6 +33,45 @@ const TextTypeWebflow = declareComponent(TextType, {
             name: "Cursor Character",
             defaultValue: "|",
         }),
+        className: props.Text({
+            name: "Class Name",
+            defaultValue: "text-type",
+        }),
+        hideCursorWhileTyping: props.Boolean({
+            name: "Hide Cursor While Typing",
+            defaultValue: false,
+        }),
+        cursorBlinkDuration: props.Number({
+            name: "Cursor Blink Duration",
+            defaultValue: 0.5,
+        }),
+        loop: props.Boolean({
+            name: "Loop",
+            defaultValue: true,
+        }),
+        initialDelay: props.Number({
+            name: "Initial Delay",
+            defaultValue: 0,
+        }),
+        deletingSpeed: props.Number({
+            name: "Deleting Speed",
+            defaultValue: 30,
+        }),
+        cursorClassName: props.Text({
+            name: "Cursor Class Name",
+            defaultValue: "text-type-cursor",
+        }),
+        startOnVisible: props.Boolean({
+            name: "Start On Visible",
+            defaultValue: false,
+        }),
+        reverseMode: props.Boolean({
+            name: "Reverse Mode",
+            defaultValue: false,
+        }),
+    },
+    options: {
+        applyTagSelectors: true
     },
 });
 
