@@ -12,7 +12,6 @@ import Masonry from './components/masonry/masonry'
 import TiltedCard from './components/tilted-card/tilted-card'
 import ChromaGrid from './components/chroma-grid/chroma-grid'
 import Folder from './components/folder/folder'
-import Lanyard from './components/lanyard/lanyard'
 import ProfileCard from './components/profile-card/profile-card'
 import SpotlightCard from './components/spotlight-card/spotlight-card'
 import BalatroBg from './background/balatro/balatro'
@@ -305,13 +304,6 @@ function App() {
           ]}
         />
       )
-    },
-    {
-      name: 'Lanyard',
-      description: '3D lanyard scene',
-      icon: <FaArrowRight />,
-      tags: ['Visual', 'Interactive', 'Component'],
-      component: <Lanyard />
     },
     {
       name: 'ProfileCard',

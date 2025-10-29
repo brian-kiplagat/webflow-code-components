@@ -2,7 +2,7 @@ import { useEffect, useRef, type FC } from 'react';
 import * as THREE from 'three';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPreset } from 'postprocessing';
 
-import './Hyperspeed.css';
+import './styles.css';
 
 interface Distortion {
   uniforms: Record<string, { value: any }>;

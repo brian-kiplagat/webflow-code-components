@@ -1,6 +1,6 @@
 import { useEffect, useRef, type FC } from 'react';
 import { gsap } from 'gsap';
-import './GridMotion.css';
+import './styles.css';
 
 interface GridMotionProps {
   items?: string;

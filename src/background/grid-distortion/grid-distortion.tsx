@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import './GridDistortion.css';
+import './styles.css';
 
 interface GridDistortionProps {
   grid?: number;
