@@ -7,8 +7,11 @@ const GridDistortionWebflow = declareComponent(GridDistortion, {
     description: 'Distorted grid background (three.js/shader)',
     group: 'Backgrounds',
     props: {
-        speed: props.Number({ name: 'Speed', defaultValue: 1, min: 0, max: 5, decimals: 2 }),
-        intensity: props.Number({ name: 'Intensity', defaultValue: 1, min: 0, max: 5, decimals: 2 }),
+        grid: props.Number({ name: 'Grid', defaultValue: 15, min: 0, max: 50, decimals: 0 }),
+        mouse: props.Number({ name: 'Mouse', defaultValue: 0.1, min: 0, max: 1, decimals: 2 }),
+        strength: props.Number({ name: 'Strength', defaultValue: 0.15, min: 0, max: 1, decimals: 2 }),
+        relaxation: props.Number({ name: 'Relaxation', defaultValue: 0.9, min: 0, max: 1, decimals: 2 }),
+        imageSrc: props.Text({ name: 'Image Source', defaultValue: 'https://via.placeholder.com/150' })
     },
 });
 

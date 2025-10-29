@@ -346,7 +346,7 @@ function App() {
     { name: 'BalatroBg', description: 'Balatro background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <BalatroBg spinRotation={-2} spinSpeed={7} contrast={3.5} lighting={0.4} pixelFilter={745} /> },
     { name: 'AuroraBg', description: 'Aurora background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <AuroraBg colorStops={['#5227FF', '#7cff67', '#5227FF']} amplitude={1} blend={0.5} speed={1} /> },
     { name: 'BeamsBg', description: 'Beams background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <BeamsBg beamNumber={12} speed={2} noiseIntensity={1.5} /> },
-    { name: 'ColorBendsBg', description: 'Color bends background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <ColorBendsBg rotation={45} speed={0.2} transparent={true} /> },
+    { name: 'ColorBendsBg', description: 'Color bends background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <ColorBendsBg rotation={180} speed={0.2} transparent={true} colors="#ff0000,#00ff00,#0000ff" frequency={1} warpStrength={1} mouseInfluence={1} parallax={0.5} noise={0.1} /> },
     { name: 'DitherBg', description: 'Dither background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <DitherBg /> },
     { name: 'DotGridBg', description: 'Dot grid background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <DotGridBg /> },
     { name: 'FaultyTerminalBg', description: 'Faulty terminal background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <FaultyTerminalBg /> },

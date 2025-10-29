@@ -203,7 +203,7 @@ const LetterGlitch: React.FC<LetterGlitchProps> = ({
     resizeCanvas();
     animate();
 
-    let resizeTimeout: NodeJS.Timeout;
+    let resizeTimeout: ReturnType<typeof setTimeout>;
 
     const handleResize = () => {
       clearTimeout(resizeTimeout);

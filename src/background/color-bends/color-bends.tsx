@@ -7,7 +7,7 @@ type ColorBendsProps = {
   style?: React.CSSProperties;
   rotation?: number;
   speed?: number;
-  colors?: string[];
+  colors?: string;
   transparent?: boolean;
   autoRotate?: number;
   scale?: number;
@@ -117,7 +117,7 @@ export default function ColorBends({
   style,
   rotation = 45,
   speed = 0.2,
-  colors = [],
+  colors = '',
   transparent = true,
   autoRotate = 0,
   scale = 1,
@@ -263,7 +263,8 @@ export default function ColorBends({
       return new THREE.Vector3(v[0] / 255, v[1] / 255, v[2] / 255);
     };
 
-    const arr = (colors || []).filter(Boolean).slice(0, MAX_COLORS).map(toVec3);
+    const colorList = (colors).split(',').map((c) => c.trim()).filter(Boolean);
+    const arr = colorList.slice(0, MAX_COLORS).map(toVec3);
     for (let i = 0; i < MAX_COLORS; i++) {
       const vec = (material.uniforms.uColors.value as THREE.Vector3[])[i];
       if (i < arr.length) vec.copy(arr[i]);

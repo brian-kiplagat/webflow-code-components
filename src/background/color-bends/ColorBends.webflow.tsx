@@ -17,7 +17,7 @@ const ColorBendsWebflow = declareComponent(ColorBends, {
         mouseInfluence: props.Number({ name: 'Mouse Influence', defaultValue: 1, min: 0, max: 5, decimals: 2 }),
         parallax: props.Number({ name: 'Parallax', defaultValue: 0.5, min: 0, max: 2, decimals: 2 }),
         noise: props.Number({ name: 'Noise', defaultValue: 0.1, min: 0, max: 1, decimals: 2 }),
-        colors: props.Text({ name: 'Colors (comma separated hex)', defaultValue: '' }),
+        colors: props.Text({ name: 'Colors (comma separated hex)', defaultValue: '#ff0000,#00ff00,#0000ff' }),
     },
 });
 

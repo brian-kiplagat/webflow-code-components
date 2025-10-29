@@ -1,8 +1,8 @@
 import { declareComponent } from '@webflow/react';
-import Hyperspeed from './hyperspeed';
+import HyperspeedAdapter from './HyperspeedAdapter';
 import { props } from '@webflow/data-types';
 
-const HyperspeedWebflow = declareComponent(Hyperspeed, {
+const HyperspeedWebflow = declareComponent(HyperspeedAdapter, {
     name: 'HyperspeedBackground',
     description: 'Starfield hyperspeed background',
     group: 'Backgrounds',

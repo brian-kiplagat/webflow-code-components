@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, FC } from 'react';
+import { useEffect, useRef, type FC } from 'react';
 import { gsap } from 'gsap';
 import './GridMotion.css';
 
 interface GridMotionProps {
-  items?: string[];
+  items?: string;
   gradientColor?: string;
 }
 
-const GridMotion: FC<GridMotionProps> = ({ items = [], gradientColor = 'black' }) => {
+const GridMotion: FC<GridMotionProps> = ({ items = '', gradientColor = 'black' }) => {
   const gridRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const mouseXRef = useRef<number>(window.innerWidth / 2);
