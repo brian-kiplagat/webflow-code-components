@@ -42,14 +42,35 @@ import SquaresBg from './background/squares/squares'
 import ThreadsBg from './background/threads/threads'
 import WavesBg from './background/waves/waves'
 import { FaArrowRight } from 'react-icons/fa'
+import { useState, type JSX } from 'react'
 import './App.css'
 
 function App() {
-  const components = [
+  const [activeItem, setActiveItem] = useState<null | {
+    name: string,
+    description: string,
+    icon: JSX.Element,
+    component: JSX.Element,
+  }>(null);
+
+  type tag = 'Background' | 'Visual' | 'Canvas' | 'Text' | 'UI' | 'Component' | 'Interactive';
+
+  type Component = {
+    name: string,
+    description: string,
+    icon: JSX.Element,
+    component: JSX.Element,
+    tags?: tag[],
+  };
+
+
+
+  const components: Component[] = [
     {
       name: 'CurvedLoop',
       description: 'A curved loop marquee with interactive tilt',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
       component: (
         <CurvedLoop
           marqueeText="Hello, world!"
@@ -65,6 +86,7 @@ function App() {
       name: 'TargetCursor',
       description: 'Magnetic target cursor with spin',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
       component: (
         <TargetCursor
           spinDuration={2}
@@ -77,6 +99,7 @@ function App() {
       name: 'ElectricBorder',
       description: 'Animated electric border wrapper',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Component'],
       component: (
         <ElectricBorder
           color="#1DFF85"
@@ -96,6 +119,7 @@ function App() {
       name: 'GradientText',
       description: 'Animated gradient text',
       icon: <FaArrowRight />,
+      tags: ['Text', 'UI', 'Component'],
       component: (
         <GradientText
           colors="#40ffaa,#4079ff,#40ffaa,#4079ff,#40ffaa"
@@ -111,6 +135,7 @@ function App() {
       name: 'TextType',
       description: 'Typing effect text',
       icon: <FaArrowRight />,
+      tags: ['Text', 'UI', 'Component'],
       component: (
         <TextType
           text="experiences,examples,tutorials, Happy coding!"
@@ -125,6 +150,7 @@ function App() {
       name: 'CircularText',
       description: 'Circular spinning text',
       icon: <FaArrowRight />,
+      tags: ['Text', 'UI', 'Component'],
       component: (
         <CircularText
           text="REACT*BITS*COMPONENTS*"
@@ -138,12 +164,14 @@ function App() {
       name: 'DecryptedText',
       description: 'Decryption hover text',
       icon: <FaArrowRight />,
+      tags: ['Text', 'UI', 'Interactive'],
       component: <DecryptedText text="Hover me!" />
     },
     {
       name: 'DecryptedTextCustomized',
       description: 'Customizable decryption text',
       icon: <FaArrowRight />,
+      tags: ['Text', 'UI', 'Interactive'],
       component: (
         <DecryptedText
           text="Customize me"
@@ -160,6 +188,7 @@ function App() {
       name: 'DecryptedTextInView',
       description: 'Decrypt on view with center reveal',
       icon: <FaArrowRight />,
+      tags: ['Text', 'UI', 'Interactive'],
       component: (
         <DecryptedText
           text="This text animates when in view"
@@ -172,12 +201,14 @@ function App() {
       name: 'CircularGallery',
       description: 'Circular 3D gallery',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Visual', 'Interactive'],
       component: <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
     },
     {
       name: 'MagicBento',
       description: 'Interactive bento with effects',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Visual'],
       component: (
         <MagicBento
           textAutoHide={true}
@@ -197,6 +228,7 @@ function App() {
       name: 'Stack',
       description: 'Draggable stacked cards',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
       component: (
         <Stack
           randomRotation={true}
@@ -216,6 +248,7 @@ function App() {
       name: 'Masonry',
       description: 'Animated masonry grid',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Visual', 'Component'],
       component: (
         <Masonry
           items={[
@@ -236,6 +269,7 @@ function App() {
       name: 'TiltedCard',
       description: '3D tilt image card',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
       component: (
         <TiltedCard
           imageSrc="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format"
@@ -251,12 +285,14 @@ function App() {
       name: 'ChromaGrid',
       description: 'Animated chroma grid',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Visual', 'Component'],
       component: <ChromaGrid />
     },
     {
       name: 'Folder',
       description: 'Folder UI with items',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Component'],
       component: (
         <Folder
           color="#5227FF"
@@ -273,12 +309,14 @@ function App() {
       name: 'Lanyard',
       description: '3D lanyard scene',
       icon: <FaArrowRight />,
+      tags: ['Visual', 'Interactive', 'Component'],
       component: <Lanyard />
     },
     {
       name: 'ProfileCard',
       description: 'Interactive profile card',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
       component: (
         <ProfileCard
           avatarUrl="https://i.pravatar.cc/300?img=68"
@@ -294,6 +332,7 @@ function App() {
       name: 'SpotlightCard',
       description: 'Mouse-follow spotlight effect card',
       icon: <FaArrowRight />,
+      tags: ['UI', 'Interactive', 'Component'],
       component: (
         <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
           <div style={{ padding: '2rem' }}>
@@ -304,21 +343,22 @@ function App() {
       )
     },
     // Backgrounds
-    { name: 'BalatroBg', description: 'Balatro background', icon: <FaArrowRight />, component: <BalatroBg spinRotation={-2} spinSpeed={7} contrast={3.5} lighting={0.4} pixelFilter={745} /> },
-    { name: 'AuroraBg', description: 'Aurora background', icon: <FaArrowRight />, component: <AuroraBg colorStops={['#5227FF', '#7cff67', '#5227FF']} amplitude={1} blend={0.5} speed={1} /> },
-    { name: 'BeamsBg', description: 'Beams background', icon: <FaArrowRight />, component: <BeamsBg beamNumber={12} speed={2} noiseIntensity={1.5} /> },
-    { name: 'ColorBendsBg', description: 'Color bends background', icon: <FaArrowRight />, component: <ColorBendsBg rotation={45} speed={0.2} transparent={true} /> },
-    { name: 'DitherBg', description: 'Dither background', icon: <FaArrowRight />, component: <DitherBg /> },
-    { name: 'DotGridBg', description: 'Dot grid background', icon: <FaArrowRight />, component: <DotGridBg /> },
-    { name: 'FaultyTerminalBg', description: 'Faulty terminal background', icon: <FaArrowRight />, component: <FaultyTerminalBg /> },
-    { name: 'GalaxyBg', description: 'Galaxy background', icon: <FaArrowRight />, component: <GalaxyBg /> },
-    { name: 'GradientBlindsBg', description: 'Gradient blinds background', icon: <FaArrowRight />, component: <GradientBlindsBg /> },
-    { name: 'DarkVeilBg', description: 'Dark veil background', icon: <FaArrowRight />, component: <DarkVeilBg /> },
-    { name: 'IridescenceBg', description: 'Iridescence background', icon: <FaArrowRight />, component: <IridescenceBg /> },
+    { name: 'BalatroBg', description: 'Balatro background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <BalatroBg spinRotation={-2} spinSpeed={7} contrast={3.5} lighting={0.4} pixelFilter={745} /> },
+    { name: 'AuroraBg', description: 'Aurora background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <AuroraBg colorStops={['#5227FF', '#7cff67', '#5227FF']} amplitude={1} blend={0.5} speed={1} /> },
+    { name: 'BeamsBg', description: 'Beams background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <BeamsBg beamNumber={12} speed={2} noiseIntensity={1.5} /> },
+    { name: 'ColorBendsBg', description: 'Color bends background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <ColorBendsBg rotation={45} speed={0.2} transparent={true} /> },
+    { name: 'DitherBg', description: 'Dither background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <DitherBg /> },
+    { name: 'DotGridBg', description: 'Dot grid background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <DotGridBg /> },
+    { name: 'FaultyTerminalBg', description: 'Faulty terminal background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <FaultyTerminalBg /> },
+    { name: 'GalaxyBg', description: 'Galaxy background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <GalaxyBg /> },
+    { name: 'GradientBlindsBg', description: 'Gradient blinds background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <GradientBlindsBg /> },
+    { name: 'DarkVeilBg', description: 'Dark veil background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <DarkVeilBg /> },
+    { name: 'IridescenceBg', description: 'Iridescence background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <IridescenceBg /> },
     {
       name: 'LetterGlitchBg',
       description: 'Letter glitch banner',
       icon: <FaArrowRight />,
+      tags: ['Background', 'Visual', 'Canvas'],
       component: (
         <LetterGlitchBg
           glitchColors={'#2b4539,#61dca3,#61b3dc'}
@@ -330,20 +370,20 @@ function App() {
         />
       )
     },
-    { name: 'LightRaysBg', description: 'Light rays background', icon: <FaArrowRight />, component: <LightRaysBg /> },
-    { name: 'LightningBg', description: 'Lightning background', icon: <FaArrowRight />, component: <LightningBg /> },
-    { name: 'LiquidChromeBg', description: 'Liquid chrome background', icon: <FaArrowRight />, component: <LiquidChromeBg /> },
-    { name: 'LiquidEtherBg', description: 'Liquid ether background', icon: <FaArrowRight />, component: <LiquidEtherBg /> },
-    { name: 'OrbBg', description: 'Orb background', icon: <FaArrowRight />, component: <OrbBg /> },
-    { name: 'ParticlesBg', description: 'Particles background', icon: <FaArrowRight />, component: <ParticlesBg /> },
-    { name: 'PixelBlastBg', description: 'Pixel blast background', icon: <FaArrowRight />, component: <PixelBlastBg /> },
-    { name: 'PlasmaBg', description: 'Plasma background', icon: <FaArrowRight />, component: <PlasmaBg /> },
-    { name: 'PrismBg', description: 'Prism background', icon: <FaArrowRight />, component: <PrismBg /> },
-    { name: 'PrismaticBurstBg', description: 'Prismatic burst background', icon: <FaArrowRight />, component: <PrismaticBurstBg /> },
-    { name: 'SilkBg', description: 'Silk background', icon: <FaArrowRight />, component: <SilkBg /> },
-    { name: 'SquaresBg', description: 'Squares background', icon: <FaArrowRight />, component: <SquaresBg /> },
-    { name: 'ThreadsBg', description: 'Threads background', icon: <FaArrowRight />, component: <ThreadsBg /> },
-    { name: 'WavesBg', description: 'Waves background', icon: <FaArrowRight />, component: <WavesBg /> },
+    { name: 'LightRaysBg', description: 'Light rays background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <LightRaysBg /> },
+    { name: 'LightningBg', description: 'Lightning background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <LightningBg /> },
+    { name: 'LiquidChromeBg', description: 'Liquid chrome background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <LiquidChromeBg /> },
+    { name: 'LiquidEtherBg', description: 'Liquid ether background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <LiquidEtherBg /> },
+    { name: 'OrbBg', description: 'Orb background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <OrbBg /> },
+    { name: 'ParticlesBg', description: 'Particles background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <ParticlesBg /> },
+    { name: 'PixelBlastBg', description: 'Pixel blast background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <PixelBlastBg /> },
+    { name: 'PlasmaBg', description: 'Plasma background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <PlasmaBg /> },
+    { name: 'PrismBg', description: 'Prism background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <PrismBg /> },
+    { name: 'PrismaticBurstBg', description: 'Prismatic burst background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <PrismaticBurstBg /> },
+    { name: 'SilkBg', description: 'Silk background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <SilkBg /> },
+    { name: 'SquaresBg', description: 'Squares background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <SquaresBg /> },
+    { name: 'ThreadsBg', description: 'Threads background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <ThreadsBg /> },
+    { name: 'WavesBg', description: 'Waves background', icon: <FaArrowRight />, tags: ['Background', 'Visual', 'Canvas'], component: <WavesBg /> },
   ]
 
   return (
@@ -415,7 +455,7 @@ function App() {
           const tagStyle = {
             border: '1px solid #3C3C43',
             borderRadius: 100,
-            padding: '1 8px',
+            padding: '0 8px',
             display: 'inline-flex',
             alignItems: 'center',
             color: '#3C3C43',
@@ -436,7 +476,7 @@ function App() {
           return (
             <div style={gridStyle}>
               {components.map((item) => {
-                const tags = getTags(item.name)
+                const tags = item.tags ?? getTags(item.name)
                 return (
                   <div key={item.name} style={cardStyle}>
                     <div style={imageStyle}>
@@ -459,7 +499,16 @@ function App() {
                           ))}
                         </div>
                       </div>
-                      <div style={ctaStyle}>Explore</div>
+                      <button
+                        style={{
+                          ...ctaStyle,
+                          border: 'none',
+                          cursor: 'pointer'
+                        }}
+                        onClick={() => setActiveItem(item)}
+                      >
+                        Explore
+                      </button>
                     </div>
                   </div>
                 )
@@ -467,6 +516,61 @@ function App() {
             </div>
           )
         })()}
+        {activeItem && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            style={{
+              position: 'fixed',
+              inset: 0,
+              background: 'rgba(0,0,0,0.6)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 1000
+            }}
+            onClick={() => setActiveItem(null)}
+          >
+            <div
+              style={{
+                background: '#0b0b0b',
+                borderRadius: 12,
+                width: 'min(1200px, 92vw)',
+                height: 'min(800px, 86vh)',
+                padding: 16,
+                boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ fontSize: 18, fontWeight: 600, color: '#ffffff' }}>{activeItem.name}</div>
+                  <div style={{ fontSize: 14, color: '#b0b0b0' }}>{activeItem.description}</div>
+                </div>
+                <button
+                  onClick={() => setActiveItem(null)}
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    borderRadius: 8,
+                    background: 'transparent',
+                    color: '#ffffff',
+                    height: 36,
+                    padding: '0 12px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+              <div style={{ flex: 1, background: '#111', borderRadius: 8, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {activeItem.component}
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
 
