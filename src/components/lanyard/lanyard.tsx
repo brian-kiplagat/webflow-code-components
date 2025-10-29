@@ -10,14 +10,14 @@ import {
   RigidBody,
   useRopeJoint,
   useSphericalJoint,
-  RigidBodyProps
+  type RigidBodyProps
 } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
 
 // replace with your own imports, see the usage snippet for details
-import cardGLB from './card.glb';
-import lanyard from './lanyard.png';
+import cardGLB from '../../assets/card.glb'
+import lanyard from '../../assets/lanyard.png';
 
 import './styles.css';
 
